@@ -29,6 +29,7 @@
 # :rocket: Features
 
 * [A script to clean up a CSV dataset and generated a JSON file](https://github.com/jennifertakagi/helper-scripts)
+* [A script to get a CSV menu food and generated a CSV file with the monthly schedule](https://github.com/jennifertakagi/helper-scripts)
 
 # :construction_worker: Installation
 
