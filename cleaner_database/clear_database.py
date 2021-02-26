@@ -5,7 +5,7 @@ FILE_INPUT = "drinks.csv"
 FILE_OUTPUT = "cleared_drinks.json"
 
 def transformList(fields, lower = False):
-  """Transforms fields on a list, splitted by ','
+  """Transforms fields on a list, splitted by ","
 
     Args:
       fields (str): The file location of the spreadsheet
@@ -17,7 +17,7 @@ def transformList(fields, lower = False):
   """
 
   result_list = []
-  splitted_fields = fields.split(',')
+  splitted_fields = fields.split(",")
 
   for field in splitted_fields:
     if (field.strip()):
@@ -58,26 +58,25 @@ def readDataFromCSV():
 
 def writeJSONFile(data_list):
   """Writes a data list in a JSON file,
-      also write '[' on start, ']' on final,
-      and ',' between each collection
+      also write "[" on start, "]" on final,
+      and "," between each collection
 
     Args:
       data_list (list): The data list
   """
 
-  with open(FILE_OUTPUT, 'wt') as csv_write:
+  with open(FILE_OUTPUT, "wt") as json_write:
     for result in data_list:
       if result == data_list[0]:
-        csv_write.write('[')
+        json_write.write("[")
 
-      json.dump(result, csv_write, sort_keys = True, indent = 4,
-               ensure_ascii = False)
+      json.dump(result, json_write, sort_keys = True, indent = 4,ensure_ascii = False)
       
       if result == data_list[-1]:
-        csv_write.write(']')
+        json_write.write("]")
 
       if result != data_list[-1]:
-        csv_write.write(',')
+        json_write.write(",")
 
 
 readDataFromCSV()
