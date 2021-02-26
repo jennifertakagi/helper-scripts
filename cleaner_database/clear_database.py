@@ -53,10 +53,10 @@ def readDataFromCSV():
           "drink_type": field[7]
         })
     
-    writeCSVFile(data_list)
+    writeJSONFile(data_list)
 
 
-def writeCSVFile(data_list):
+def writeJSONFile(data_list):
   """Writes a data list in a JSON file,
       also write '[' on start, ']' on final,
       and ',' between each collection
